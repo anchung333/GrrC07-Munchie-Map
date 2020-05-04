@@ -20,7 +20,7 @@
     "bootstrap": "^4.4.1",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "node": "^13.9.0",
     "nodemon": "^2.0.2",
     "popper.js": "^1.16.1",
