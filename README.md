@@ -4,5 +4,4 @@ Multiple late nights pulled during my time at Hack Reactor necessitated the deve
 ![demogif](https://media.giphy.com/media/MaIopJAgOZIUHe3UGL/giphy.gif)
 
 ## Goals
-- Given extreme time constraints, develop a fully-functional application using the skills developed during my time at Hack Reactor
-- Further reinforce confidence given complete autonomy and continue to think about how to manage and implement projects
+- Further reinforce confidence given complete autonomy and an extreme time limit, and continue to think about how to manage and implement projects
