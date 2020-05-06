@@ -2,18 +2,6 @@ const { TOKEN } = require('../config');
 const axios = require('axios');
 process.env.TZ = 'America/Los_Angeles';
 
-// const axiosAllResults = (businesses) => {
-//   let allPromises = [];
-//   for (let i = 0; i < businesses.length; i++) {
-//     allPromises.push(axios({
-//       method: 'get',
-//       url: `https://api.yelp.com/v3/businesses/${businesses[i].id}`,
-//       headers: {'Authorization': `Bearer ${TOKEN}`},
-//     }));
-//   }
-//   return Promise.all(allPromises);
-// }
-
 const getClosingHoursPromise = (placeId) => {
   return (
     axios({
@@ -60,28 +48,6 @@ const getPlacesPromise = () => {
     }) 
     .then((data) => {
       console.log(`YELP.JS: ${data.data.businesses.length} RESULTS SUCCESSFULLY RETRIEVED`);
-      // return (axiosAllResults(data.data.businesses)
-      //   .then(responses => {
-      //   console.log(responses);
-      //   const allLateNightSpots = [];
-      //   const finalists = [];
-      //   const d = new Date();
-      //   const day = d.getDay();
-      //   responses.forEach(response => {
-      //     let business = response.data;
-      //     console.log(response);
-      //     const hours = business.hours[0].open[day];
-      //     if (Number(hours.end) >= 2200 || Number(hours.end) <= 400) {
-      //       business.closingHour = hours.end;
-      //       allLateNightSpots.push(business);
-      //     }
-      //   })
-      //   for (let j = 0; j < 3; j++) {
-      //     const index = Math.floor(Math.random() * allLateNightSpots.length);
-      //     finalists.push(allLateNightSpots.splice(index, 1)[0]);
-      //   }
-      //   return finalists;
-      // }))
       let finalists = [];
       let businesses = data.data.businesses;
       for (let j = 0; j < 5; j++) {
@@ -90,9 +56,6 @@ const getPlacesPromise = () => {
       }
       return finalists;
     })
-    // .then(results => {
-    //   return results;
-    // })
     .catch((error) => {
       console.log('YELP.JS: ERROR RETRIEVING DATA', error);
       return error;
